@@ -8,6 +8,10 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/childsr/qgfx.git"
+  },
   "files": [
     "dist",
     "src"
