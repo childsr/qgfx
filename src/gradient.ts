@@ -1,13 +1,13 @@
 import { Color } from "./types"
 
+export type ColorStop = [number, string | Color]
 type GradientType =
   | ["conic", startAngle: number, x: number, y: number]
   | ["linear", x0: number, y0: number, x1: number, y1: number]
   | ["radial", x0: number, y0: number, r0: number, x1: number, y1: number, r1: number]
-
 interface GradientDesc {
   readonly type: GradientType
-  readonly colorStops: [number, string | Color][]
+  readonly colorStops: ColorStop[]
 }
 
 export class Gradient {
@@ -39,6 +39,13 @@ export class Gradient {
 
   private constructor(desc: GradientDesc) {
     this.desc = desc
+  }
+
+  addColorStops(...colorStops: ColorStop[]): Gradient {
+    return new Gradient({
+      type: this.desc.type,
+      colorStops: [...this.desc.colorStops,...colorStops]
+    })
   }
 
   static conic(startAngle: number, x: number, y: number, colorStops: [number, string | Color][]): Gradient {
