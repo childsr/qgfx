@@ -1,6 +1,6 @@
 # @bananaseed/qgfx
 
-qgfx is a functional graphics library for the HTML5 Canvas API. It provides a composable way to build and transform complex drawings using simple primitives and transforms.
+qgfx is a functional graphics library for the HTML5 Canvas API. It provides a composable way to build and transform complex vector graphics images using simple primitives and transforms.
 
 ## Installation
 
@@ -20,14 +20,14 @@ type Picture = (ctx: CanvasRenderingContext2D) => void
 type Transform = (pic: Picture) => Picture
 ```
 
-## Features
+## Primitives
 
 ### Pictures
 - `blank`: An empty picture.
 - `rect`: A 1x1 unit rectangle.
 - `circle`: A unit circle.
 - `segment(pt1, pt2)`: A line segment between two points.
-- **Path Builder**: A fluent API for creating complex paths (similar to Canvas 2D path commands).
+- **Path Builder**: An API for creating complex paths from drawing commands similar to Canvas 2D path commands.
 
 ### Transforms
 - `translate(x, y)`
@@ -41,7 +41,7 @@ type Transform = (pic: Picture) => Picture
 
 ### Styling
 - **Colors**: Support for CSS strings, RGB/HSL, and hex codes.
-- **Color Operators**: `hueRotate`, `saturate`, etc.
+- **Color Operators**: `hueRotate`, `saturate`, `lighten`
 - **Gradients and Patterns**.
 
 ## Example Usage
