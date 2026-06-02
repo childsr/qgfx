@@ -1,0 +1,28 @@
+{
+  "name": "@bananaseed/qgfx",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Ryan Childs",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "watch": "vite build --watch",
+    "serve-test": "vite",
+    "build": "npm run clean && vite build",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vite-plugin-dts": "^5.0.2"
+  }
+}
