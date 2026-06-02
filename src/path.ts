@@ -68,6 +68,10 @@ export class Path implements IPath {
     return new Path([["roundRect",[x,y,w,h,radii]],this.commands])
   }
 
+  addPath(path: Path): Path {
+    return Path.from([this,path])
+  }
+
   get pic(): Picture {
     if (!this._pic) {
       const cmds = this.cmdsArr
@@ -94,4 +98,5 @@ export class Path implements IPath {
     }
     return new Path(cmdStack)
   }
+  static path = new Path()
 }
