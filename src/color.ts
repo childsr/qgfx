@@ -101,6 +101,10 @@ class HSLColor implements Color {
     return new HSLColor(this.h,this.s,multiplier*this.l,this.a)
   }
 
+  toString(): string {
+    return `hsla(${this.h},${this.s},${this.l},${this.a})`
+  }
+
   constructor(h: number, s: number, l: number, a: number = 1) {
     this.h = h
     this.s = s
