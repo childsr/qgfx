@@ -1,9 +1,19 @@
 import { Gradient } from "./gradient"
+import { Pattern } from "./pattern"
 
 export type Picture = (ctx: CanvasRenderingContext2D) => void
 export type Transform = (pic: Picture) => Picture
 
-export type FillStyle = string | Color | Gradient | CanvasGradient | CanvasPattern
+export type MatrixArray = [a: number, b: number, c: number, d: number, e: number, f: number]
+export type Matrix = MatrixArray | DOMMatrix
+
+export type FillStyle =
+  | string
+  | Color
+  | Gradient
+  | Pattern
+  | CanvasGradient
+  | CanvasPattern
 export type LineStyle = Partial<{
   width: number
   cap: CanvasLineCap
